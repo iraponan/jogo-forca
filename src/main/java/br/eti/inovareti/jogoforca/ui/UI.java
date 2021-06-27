@@ -15,7 +15,7 @@ public class UI {
     }
 
     public static char readChar(String text) throws InvalidCharacterException {
-        System.out.println(text + " ");
+        System.out.print(text + " ");
 
         Scanner scanner = new Scanner(System.in);
         String line = scanner.nextLine();
