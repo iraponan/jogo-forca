@@ -13,7 +13,7 @@ public class Game {
 
     //private static final int MAX_ERROS = 5;
 
-    public void start() {
+    public void start(String[] args) {
         UI.print("Bem vindo ao Jogo da Forca!");
 
         Dictionary dictionary = Dictionary.getInstance();
@@ -23,6 +23,10 @@ public class Game {
 
         Set<Character> usedChars = new HashSet<>();
         int erroCount = 0;
+
+        if (args.length > 0) {
+            Config.setMaxErros(args[0]);
+        }
 
         int maxErros = Integer.parseInt(Config.get("maxErros"));
         UI.print("Você pode errar no máximo '" + maxErros + "' vez(es).");
